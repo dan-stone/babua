@@ -27,11 +27,11 @@ response = requests.post(
     url="https://maps.googleapis.com/maps/api/place/nearbysearch/json",
     params={
         "key": "AIzaSyCRbZdcQnUi_fHi_QISRsv2BhCyDgNcMtk",
-        "location": f"{coordinates.lat},{coordinates.long}",
+        "location": "{},{}".format(coordinates.lat, coordinates.long),
         "radius": 10000,
         "keyword": args.q
     }
 )
 
 for result in response.json()["results"]:
-    print(f"{result['name']}: {result['vicinity']}")
+    print("{}: {}".format(result['name'], result['vicinity']))
