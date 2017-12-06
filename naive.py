@@ -19,8 +19,8 @@ response = requests.get(
     url="https://freegeoip.net/json/"
 )
 coordinates = SimpleNamespace(
-    latitude=response.json()["latitude"],
-    longitude=response.json()["longitude"]
+    lat=response.json()["latitude"],
+    long=response.json()["longitude"]
 )
 
 response = requests.post(
