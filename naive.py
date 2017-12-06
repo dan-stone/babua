@@ -16,7 +16,8 @@ args = parser.parse_args()
 
 # Get approximate GPS coordinates
 response = requests.get(
-    url="https://freegeoip.net/json/"
+    url="https://freegeoip.net/json/",
+    verify=False
 )
 coordinates = SimpleNamespace(
     lat=response.json()["latitude"],
